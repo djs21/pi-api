@@ -1,0 +1,42 @@
+{
+  "name": "pi-api",
+  "version": "1.0.0",
+  "description": "Multi-session Gateway and Pi extension REST bridge for ZeroClaw integration",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "test:server": "bun test server",
+    "test:client": "bun test client",
+    "test:e2e": "bun test test",
+    "start": "bun run server/index.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "@earendil-works/pi-tui": {
+      "optional": true
+    },
+    "@sinclair/typebox": {
+      "optional": true
+    }
+  },
+  "pi": {
+    "extensions": [
+      "./client/index.ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  }
+}
